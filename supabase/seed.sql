@@ -1,29 +1,48 @@
--- Example service catalog. Replace stripe_price_id values with real Stripe
--- Price IDs created in the Stripe Dashboard before going live.
+-- Solid View Media live service catalog (test-mode Stripe Price IDs).
+-- Swap the stripe_price_id values for live-mode IDs before going to
+-- production Stripe keys.
+
+delete from public.services;
 
 insert into public.services (name, description, price_cents, stripe_price_id, billing_type, active)
 values
   (
-    'Single Property Reel',
-    'One property, one polished vertical reel — from your raw photos to a finished, watermark-free video.',
+    '4D Room Staging',
+    'AI-enhanced room staging that shows a property''s true potential — before-and-after reels ready to share with buyers.',
     35000,
-    'price_REPLACE_SINGLE_PROPERTY',
+    'price_1TrNWN0213tMRUdMtGjS0rYA',
     'one_time',
     true
   ),
   (
-    'Listing Launch Package',
-    'Three reels for the same property — hero reel, room-by-room walkthrough, and a social teaser cut.',
-    75000,
-    'price_REPLACE_LAUNCH_PACKAGE',
+    'Cinematic Capture & Video Stills',
+    'Professional cinematic video and still captures of your listing, edited into a polished, share-ready package.',
+    50000,
+    'price_1UELIe0213tMRUdMK6oqPJ6W',
     'one_time',
     true
   ),
   (
-    'Unlimited Monthly Membership',
-    'Submit unlimited properties every month under one recurring charge — no per-order payment.',
-    99900,
-    'price_REPLACE_MONTHLY_MEMBERSHIP',
+    'Neighborhood Walking Tours',
+    'A guided walking-tour reel that showcases the neighborhood, streets, and nearby amenities around the listing.',
+    65000,
+    'price_1UELMM0213tMRUdM9vu0U2lH',
+    'one_time',
+    true
+  ),
+  (
+    'Solid View Master Bundle',
+    'Our complete package — room staging, cinematic capture, and a neighborhood walking tour in one bundle.',
+    150000,
+    'price_1UELPT0213tMRUdMr1oliOHN',
+    'one_time',
+    true
+  ),
+  (
+    'High-Volume Brokerage Membership',
+    'Unlimited property submissions every month under one recurring charge — built for high-volume brokerages.',
+    250000,
+    'price_1UELSt0213tMRUdMx95lS6Px',
     'subscription',
     true
   );
