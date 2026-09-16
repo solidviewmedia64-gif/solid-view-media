@@ -3,15 +3,19 @@ import { formatCents, cn } from "@/lib/utils";
 import { CheckoutButton } from "@/components/checkout-button";
 import type { Service } from "@/lib/types";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function PricingPage() {
   const supabase = await createClient();
-  const { data: services } = await supabase
+  const { data: services, error } = await supabase
     .from("services")
     .select("*")
     .eq("active", true)
     .order("price_cents", { ascending: true });
+
+  if (error) {
+    console.error("Failed to load services for /pricing:", error.message);
+  }
 
   const list = (services ?? []) as Service[];
 
