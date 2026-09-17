@@ -73,7 +73,9 @@ export default async function PricingPage() {
         })}
         {list.length === 0 && (
           <p className="col-span-full text-center text-sm text-muted">
-            Pricing is being updated — please check back shortly.
+            {error
+              ? "We're having trouble loading pricing right now — please refresh or check back shortly."
+              : "Pricing is being updated — please check back shortly."}
           </p>
         )}
       </div>
