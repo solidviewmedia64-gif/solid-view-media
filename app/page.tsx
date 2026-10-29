@@ -58,6 +58,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* See the difference */}
+      <section className="py-20">
+        <div className="container-page">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
+              See the difference
+            </h2>
+            <p className="mt-4 text-muted">
+              Real listing photos from 520 Georgetown Dr, before and after our
+              virtual staging.
+            </p>
+          </div>
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr_auto] lg:items-start">
+            <BeforeAfter room="Living room" before="/demo/family-before.jpg" after="/demo/family-after.jpg" />
+            <BeforeAfter room="Bedroom" before="/demo/bedroom-before.jpg" after="/demo/bedroom-after.jpg" />
+            <div className="mx-auto w-full max-w-[260px]">
+              <video
+                className="aspect-[9/16] w-full rounded-xl bg-brand-dark object-cover shadow-lg"
+                src="/demo/georgetown-clip.mp4"
+                poster="/demo/georgetown-poster.jpg"
+                controls
+                playsInline
+                preload="none"
+              />
+              <p className="mt-3 text-center text-sm text-muted">
+                The 15-second social video for the same home
+              </p>
+            </div>
+          </div>
+          <p className="mt-8 text-center text-xs text-muted">
+            Furniture and decor shown are virtually staged.
+          </p>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="py-20">
         <div className="container-page">
@@ -139,6 +174,40 @@ function Step({ number, title, body }: { number: string; title: string; body: st
       </div>
       <h3 className="mb-2 text-lg font-medium text-foreground">{title}</h3>
       <p className="text-sm leading-relaxed text-muted">{body}</p>
+    </div>
+  );
+}
+
+function BeforeAfter({ room, before, after }: { room: string; before: string; after: string }) {
+  return (
+    <div>
+      <h3 className="mb-3 text-center text-lg font-medium text-foreground">{room}</h3>
+      <div className="grid grid-cols-2 gap-3">
+        <figure>
+          <Image
+            src={before}
+            alt={`${room} before staging, empty`}
+            width={750}
+            height={1000}
+            className="aspect-[3/4] w-full rounded-lg object-cover"
+          />
+          <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-wide text-muted">
+            Before
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={after}
+            alt={`${room} after virtual staging, furnished`}
+            width={750}
+            height={1000}
+            className="aspect-[3/4] w-full rounded-lg object-cover ring-2 ring-gold"
+          />
+          <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-wide text-gold-dark">
+            After
+          </figcaption>
+        </figure>
+      </div>
     </div>
   );
 }
