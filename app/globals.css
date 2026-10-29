@@ -12,6 +12,11 @@
   --card: #ffffff;
   --danger: #b3452c;
   --success: #3f7256;
+  --brand-dark: #0b0d10;
+  --gold: #c9a14a;
+  --gold-light: #ddb963;
+  --gold-dark: #9a7b2f;
+  --cream: #faf8f3;
 }
 
 @theme inline {
@@ -26,6 +31,11 @@
   --color-card: var(--card);
   --color-danger: var(--danger);
   --color-success: var(--success);
+  --color-brand-dark: var(--brand-dark);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
   --font-sans: var(--font-sans);
 }
 
