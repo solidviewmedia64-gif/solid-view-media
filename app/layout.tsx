@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Solid View Media | Real Estate Video Delivery",
+  title: "Solid View Media | Staged Listing Videos in 24 Hours",
   description:
-    "Order, review, and download your property video content — from raw photos to finished reels.",
+    "We turn empty-room listing photos into virtually staged walk-through videos for Central Florida agents, builders and investors. Ready in 24 hours. First video free.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
